@@ -2,7 +2,7 @@
 <div> - 1
 <img> - 1
 <a> - 1
-<table>
+<table> - 1
 <br> - 1
 <hr> - 1
 <p> - 1
@@ -14,8 +14,8 @@
 <footer> - 1
 <header> - 1
 <aside> - 1
-<nav> 
-<svg>
+<nav> - 1 
+<svg> - 1
 <audio>
 <video>
 <figure>
