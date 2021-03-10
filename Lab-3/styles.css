@@ -1,0 +1,83 @@
+body {
+    margin: 0px;
+}
+
+#navigation_bar > * {
+    display: inline-block;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    transform: translate(0, -20px);
+}
+
+#logo {
+    margin: 10px;
+    width: 125px;
+    height: auto;
+    transform: translate(0px, 0px);
+}
+
+#search_bar {
+    margin-left: 30px;
+    width: 55%;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #fafafa;
+}
+
+#black_banner {
+    background-color: #1E1E1C;
+    height: 25%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#course_description {
+    color: white;
+}
+
+.headers {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.course_categories > a {
+    color: #8ED1DC;
+    font-size: 15px;
+}
+
+.course_categories > b {
+    color: #FFFFFF;
+}
+
+#inner_banner_container {
+    margin-left: -200px;
+}
+
+#shopping_cart {
+    width: 40px;
+    transform: translate(0, 0);
+    height: auto;
+}
+
+#navigation_bar > button {
+    width: 100px;
+    height: 35px;
+    font-weight: 900;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+#login_button {
+    background-color: white;
+    color: #1c6a78;
+    border-color: #1c6a78; 
+}
+
+#signup_button {
+    background-color: #1c6a78;
+    color: white;
+    border-color: #1c6a78; 
+}
