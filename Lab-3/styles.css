@@ -60,9 +60,7 @@ body {
 }
 
 #shopping_cart {
-    width: 40px;
-    transform: translate(0, 0);
-    height: auto;
+    font-size: 30px;
 }
 
 #navigation_bar > button {
@@ -148,8 +146,78 @@ body {
     color: #adadad;
 }
 
-
 #course_goals > div {
     display: flex;
     flex-direction: row;
+}
+
+#offer {
+    position: absolute;
+    width: 18vw;
+    height: 90vh;
+    top: 10vh;
+    left: 60vw;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#offer > div > img {
+    position: static;
+    width: 17.5vw;
+    left: 10px;
+    padding-left: 0.25vw;
+    padding-top: 0.3vh;
+    padding-bottom: 1vh;
+}
+
+#offer_details {
+    width: 18vw;
+}
+
+#offer_details > button {
+    margin-top: 20px;
+    height: 5em;
+    width: 90%;
+    margin-left: 5%;
+    font-weight: 700;
+    background-color: inherit;
+    border-radius: 0.5em;
+    border-width: 2px;
+}
+
+#offer_image p {
+    text-align: center;
+    font-size: 12px;
+}
+
+#price {
+    padding: 20px;
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: translate(10px, 0);
+}
+
+#old_price {
+   text-decoration: line-through;
+   color: #9c9c9c;
+}
+
+#sale_deadline {
+    color: #b32d00;
+    padding-left: 20px;
+}
+
+#sale_deadline::before {
+    content: '\23F0';
+}
+
+#offer_separator hr {
+    transform: translate(0, -15px);
+    color: #d6d6d6;
+}
+
+#coupon_button {
+    background-color: green;
 }
