@@ -54,7 +54,7 @@ body {
 }
 
 #inner_banner_container {
-    margin-left: -450px;
+    margin-left: -25%;
     margin-top: 30px;
     line-height: 90%;
 }
@@ -95,20 +95,9 @@ body {
     font-size: 15px;
 }
 
-@font-face {
-    font-display: swap;
-    font-family: CCSymbols;
-    font-synthesis: none;
-    src: url(fonts/CCSymbols.woff2) format(woff2),
-         url(fonts/CCSymbols.woff)  format(woff);
-    unicode-range: u+a9, u+229c,
-                   u+1f10d-f, u+1f16d-f;
-}
-
 #subtitles {
     font-family: Helvetica,
-                 sans-serif,
-                 CCSymbols;
+                 sans-serif;
 }
 
 #subtitles > img {
@@ -121,12 +110,46 @@ body {
     height: 3em;
     width: 9em;
     font-weight: 700;
-    background-color: #1E1E1C;
+    background-color: inherit;
     color: white;
-    border-radius: 1em;
+    border-radius: 0.5em;
+    border-width: 2px;
 }
 
 #course_goals {
-    margin-top: 30px;
+    background-color: #FBFBF8;
+    margin-left: 20%;
+    margin-top: 60px;
+    width: 750px;
     line-height: 90%;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+}
+
+#course_goals > h2 {
+    color: #4d4d4d;
+    margin-left: 25px;
+}
+
+#course_goals ul {
+    list-style: none;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#course_goals li {
+    padding-left: 1em;
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+#course_goals li::before {
+    content: '✓\2002\2002';
+    color: #adadad;
+}
+
+
+#course_goals > div {
+    display: flex;
+    flex-direction: row;
 }
