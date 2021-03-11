@@ -2,8 +2,8 @@
 A counterfeit of the original page.
 It's pretty bad. HTML+CSS
 
-##Counterfeit
+## Counterfeit
 ![Counterfeit](counterfeit.png)
 
-##Original
+## Original
 ![Original](original.png)
