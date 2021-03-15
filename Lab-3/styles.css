@@ -14,7 +14,7 @@ body {
     margin: 10px;
     width: 125px;
     height: auto;
-    transform: translate(0px, 0px);
+    transform: translate(0px, 10px);
 }
 
 #search_bar {
