@@ -3,7 +3,6 @@
 	padding: 0;
 	list-style: none;
 	text-decoration: none;
-	font-family: 'Montserrat', sans-serif;
 }
 
 .navbar{
@@ -12,9 +11,10 @@
 	background: lightblue;
 }
 
-.navbar > ul{
+.navbar > ul {
 	display: flex;
 	justify-content: center;	
+	flex-direction: row;
 }
 
 .navbar ul li{
@@ -28,7 +28,6 @@
     width: 180px;
     text-align: center;
     padding: 20px 10px;
-    transition: all 0.2s ease;
 }
 
 .navbar ul li a:hover,
@@ -59,7 +58,6 @@
     position: absolute;
     top: 0;
     left: 100%;
-    width: 100%;
     display: none;
 }
 

@@ -3,7 +3,7 @@ var submenu_a = document.querySelectorAll(".submenu_a");
 
 menu_link.forEach(function(aitem){
 
-		aitem.addEventListener("click", function(){
+		aitem.addEventListener("mouseover", function(){
 			menu_link.forEach(function(aitem){
 				aitem.classList.remove("active");
 			})
@@ -16,7 +16,7 @@ menu_link.forEach(function(aitem){
 
 submenu_a.forEach(function(submenu_item){
 
-		submenu_item.addEventListener("click", function(){
+		submenu_item.addEventListener("mouseover", function(){
 			submenu_a.forEach(function(submenu_item){
 				submenu_item.classList.remove("active");
 			})
