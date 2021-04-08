@@ -16,7 +16,7 @@
 
         public function selectByName($name) {
             try {
-                $pdoStatement = $this->phpDataObject->query("SELECT * FROM UserTable WHERE Name='$name'");
+                $pdoStatement = $this->phpDataObject->query("SELECT * FROM UserTable WHERE Name LIKE '%$name%'");
             } catch (Exception $e) {
                 echo "Select error: " . $e->getMessage();
             }
@@ -26,7 +26,7 @@
 
         public function selectByRole($role) {
             try {
-                $pdoStatement = $this->phpDataObject->query("SELECT * FROM UserTable WHERE Role='$role'");
+                $pdoStatement = $this->phpDataObject->query("SELECT * FROM UserTable WHERE Role LIKE '%$role%'");
             } catch (Exception $e) {
                 echo "Select error: " . $e->getMessage();
             }
