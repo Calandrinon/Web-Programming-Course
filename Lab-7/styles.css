@@ -68,5 +68,39 @@
 #welcome-message {
 	position: relative;
 	text-align: center;
-	top: 20px;
+	top: 1vh;
+}
+
+#inputForm {
+	position: relative;
+	background-color: #383838;
+	border-radius: 20px;
+	color: white;
+	width: 50vw;
+	top: 5vh;
+	left: 25vw;
+	right: 25vw;
+}
+
+#inputForm p, input, h2 {
+	margin-top: 30px;
+	text-align: center;
+}
+
+#inputForm > div {
+	margin-top: 30px;
+	text-align: center;
+}
+
+#container {
+	position: relative;
+	margin-top: 5vh;
+	text-align: center;
+	background-color: #383838;
+	border-radius: 20px;
+	color: white;
+	width: 50vw;
+	top: 5vh;
+	left: 25vw;
+	right: 25vw;
 }
