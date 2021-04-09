@@ -39,6 +39,20 @@ function displayUsersByRole(users) {
     $("#container").html(listOfUsers);
 }
 
+function addedUserMessage() {
+    $("#container").html("<h1>User added.</h1>");
+}
+
+
+function removedUserMessage() {
+    $("#container").html("<h1>User removed.</h1>");
+}
+
+
+function updatedUserMessage() {
+    $("#container").html("<h1>User updated.</h1>");
+}
+
 
 $(document).ready(function() {
     $("#showUsersByName").click(function() {
@@ -76,7 +90,18 @@ $(document).ready(function() {
                 role: $('#role').val(),  
                 email: $('#email').val() 
             }, 
-            displayUsersByRole
+            addedUserMessage 
+        );
+    });
+});
+
+
+$(document).ready(function() {
+    $("#removeUser").click(function() {
+        $.getJSON(
+            "controller.php",
+            {requestedAction: "removeUser", email: $('#email').val()}, 
+            removedUserMessage
         );
     });
 });

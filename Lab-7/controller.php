@@ -20,6 +20,10 @@
                         $this->{$_GET["requestedAction"]}($_GET["name"]); break;
                     case "addUser":
                         $this->{$_GET["requestedAction"]}($_GET["name"], $_GET["username"], $_GET["password"], $_GET["dateOfBirth"], $_GET["role"], $_GET["email"]); break;
+                    case "removeUser":
+                        $this->{$_GET["requestedAction"]}($_GET["email"]); break;
+                    case "updateUser":
+                        $this->{$_GET["requestedAction"]}($_GET["name"], $_GET["username"], $_GET["password"], $_GET["dateOfBirth"], $_GET["role"], $_GET["email"]); break;
                 }
             }
         }
@@ -37,6 +41,10 @@
         public function addUser($name, $username, $password, $dateOfBirth, $role, $email)  {
             $user = new User($name, $username, $password, $dateOfBirth, $role, $email);
             $this->model->insertUser($user);
+        }
+
+        public function removeUser($email)  {
+            $this->model->deleteUser($email);
         }
     }
 

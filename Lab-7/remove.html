@@ -36,9 +36,12 @@
     <h1 id="welcome-message">Welcome to the enterprise user management system.</h1>
 	<div id="inputForm">
 		<h2>Remove a user:</h2>
-		<p>Role:</p> 
 		<div>
-			<input type="text" name="role" id="role"/> <input type="button" id="showUsersByRole" value="Get details"/>
+			<form id="actualForm">
+			<input type="text" placeholder="E-mail" name="email" id="email"/> <br>
+			<br>
+			<input type="button" id="removeUser" value="Remove"/>
+			</form>
 		</div>
 	</div>
 		

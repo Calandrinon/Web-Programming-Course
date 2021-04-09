@@ -37,13 +37,12 @@
             $this->database->insert($user->getName(), $user->getUsername(), $user->getPassword(), $user->getDateOfBirth(), $user->getRole(), $user->getEmail());
         }
 
-        public function deleteUser($user) {
-            $this->database->deleteByEmail($user->getEmail());
+        public function deleteUser($email) {
+            $this->database->deleteByEmail($email);
         }
 
-        public function updateUser($user) {
-            $this->database->updatePassword($user->getPassword());
+        public function updateUser($password) {
+            $this->database->updatePassword($password);
         }
     }
-
 ?>
