@@ -41,8 +41,8 @@
             $this->database->deleteByEmail($email);
         }
 
-        public function updateUser($password) {
-            $this->database->updatePassword($password);
+        public function updateUser($username, $password) {
+            $this->database->updatePassword($username, $password);
         }
     }
 ?>

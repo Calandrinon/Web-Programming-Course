@@ -97,6 +97,18 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+    $("#updateUser").click(function() {
+        console.log("You clicked the button...");
+        $.getJSON(
+            "controller.php",
+            {requestedAction: "updateUser", username: $('#username').val(), password: $('#password').val()}, 
+            updatedUserMessage
+        );
+    });
+});
+
+
+$(document).ready(function() {
     $("#removeUser").click(function() {
         $.getJSON(
             "controller.php",
