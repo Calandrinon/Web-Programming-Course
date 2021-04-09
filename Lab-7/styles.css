@@ -1,3 +1,7 @@
+body {
+	background-color: #f2f2f2;
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -103,4 +107,9 @@
 	top: 5vh;
 	left: 25vw;
 	right: 25vw;
+}
+
+#actualForm > input {
+	text-align: center;
+	justify-content: center;
 }

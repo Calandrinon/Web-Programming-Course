@@ -61,3 +61,22 @@ $(document).ready(function() {
         );
     });
 });
+
+
+$(document).ready(function() {
+    $("#addUser").click(function() {
+        $.getJSON(
+            "controller.php",  
+            {   
+                requestedAction: "addUser", 
+                name: $('#name').val(),  
+                username: $('#username').val(),  
+                password: $('#password').val(),  
+                dateOfBirth: $('#dateOfBirth').val(),  
+                role: $('#role').val(),  
+                email: $('#email').val() 
+            }, 
+            displayUsersByRole
+        );
+    });
+});
