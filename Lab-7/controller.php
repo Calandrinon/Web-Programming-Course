@@ -48,7 +48,6 @@
         }
 
         public function updateUser($username, $password) {
-            print("wtf is happening");
             $this->model->updateUser($username, $password);
         }
     }

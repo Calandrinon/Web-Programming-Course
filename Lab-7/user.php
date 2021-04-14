@@ -34,7 +34,7 @@
         }
 
         public function getRole() {
-            return $this->Role;
+            return $this->role;
         }
 
         public function getEmail() {
