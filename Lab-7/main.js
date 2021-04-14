@@ -36,21 +36,28 @@ function displayUsersByRole(users) {
         listOfUsers.push(userHtml);
     });
 
+    console.log("aaaaaaaaa");
     $("#container").html(listOfUsers);
 }
 
 function addedUserMessage() {
-    $("#container").html("<h1>User added.</h1>");
+    list = ["<h1>User added.</h1>"];
+    console.log("push html to the list.");
+    $("#container").html(list);
 }
 
 
 function removedUserMessage() {
-    $("#container").html("<h1>User removed.</h1>");
+    list = ["<h1>User removed.</h1>"];
+    console.log("push html to the list.");
+    $("#container").html(list);
 }
 
 
 function updatedUserMessage() {
-    $("#container").html("<h1>User updated.</h1>");
+    list = ["<h1>User updated.</h1>"];
+    console.log("push html to the list.");
+    $("#container").html(list);
 }
 
 

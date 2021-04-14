@@ -37,7 +37,6 @@
         public function insert($name, $username, $password, $dateOfBirth, $role, $email) {
             try {
                 $pdoStatement = $this->phpDataObject->exec("INSERT INTO UserTable(Name, Username, Password, DateOfBirth, Role, Email) VALUES('$name', '$username', '$password', '$dateOfBirth', '$role', '$email');");
-                echo "Insert successful.";
             } catch (Exception $e) {
                 echo "Insert error: " . $e->getMessage();
             }
@@ -46,7 +45,6 @@
         public function deleteByEmail($email) {
             try {
                 $pdoStatement = $this->phpDataObject->exec("DELETE FROM UserTable WHERE Email='$email';");
-                echo "Delete successful.";
             } catch (Exception $e) {
                 echo "Delete error: " . $e->getMessage();
             }
@@ -55,7 +53,6 @@
         public function updatePassword($username, $password) {
             try {
                 $pdoStatement = $this->phpDataObject->exec("UPDATE UserTable SET Password='$password' WHERE Username='$username';");
-                echo "Update successful.";
             } catch (Exception $e) {
                 echo "Update error: " . $e->getMessage();
             }

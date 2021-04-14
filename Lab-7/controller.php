@@ -41,14 +41,19 @@
         public function addUser($name, $username, $password, $dateOfBirth, $role, $email)  {
             $user = new User($name, $username, $password, $dateOfBirth, $role, $email);
             $this->model->insertUser($user);
+            return $this->view->displayUser($user);
         }
 
         public function removeUser($email) {
             $this->model->deleteUser($email);
+            $user = new User("", "", "", "", "", $email);
+            return $this->view->displayUser($user);
         }
 
         public function updateUser($username, $password) {
             $this->model->updateUser($username, $password);
+            $user = new User("", $username, $password, "", "", "");
+            return $this->view->displayUser($user);
         }
     }
 
