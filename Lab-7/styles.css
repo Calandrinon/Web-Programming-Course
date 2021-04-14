@@ -113,3 +113,9 @@ body {
 	text-align: center;
 	justify-content: center;
 }
+
+
+#filterHistory {
+	border-radius: 10px;
+	background-color: cadetblue;
+}

@@ -1,3 +1,5 @@
+var filterLog = [];
+
 function displayUsersByName(users) {
     var listOfUsers = [];
     if (!users.length) {
@@ -14,6 +16,8 @@ function displayUsersByName(users) {
                         "E-mail: " + user.email + "<br/><hr>";
         listOfUsers.push(userHtml);
     });
+
+    logLastFilterPattern("name");
 
     $("#container").html(listOfUsers);
 }
@@ -36,7 +40,8 @@ function displayUsersByRole(users) {
         listOfUsers.push(userHtml);
     });
 
-    console.log("aaaaaaaaa");
+    logLastFilterPattern("role");
+
     $("#container").html(listOfUsers);
 }
 
@@ -124,3 +129,12 @@ $(document).ready(function() {
         );
     });
 });
+
+function logLastFilterPattern(elementId) {
+    if (filterLog.length != 0) {
+        $("#filterHistory").html(filterLog);
+        filterLog = [];
+    }
+    filterLog.push(document.getElementById(elementId).value);
+    console.log(filterLog);
+}
