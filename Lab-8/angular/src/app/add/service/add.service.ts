@@ -20,7 +20,7 @@ export class AddService {
       "&dateOfBirth=" + user.dateOfBirth +
       "&role=" + user.role+
       "&email=" + user.email
-      ).subscribe(stuff => console.log("From the subscribed Observable: ", stuff));
+      ).subscribe(result => console.log("From the subscribed Observable: ", result));
     console.log("From AddService: The request has been sent.");
   }
 }

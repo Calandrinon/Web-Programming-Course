@@ -1,1 +1,16 @@
-<p>remove works!</p>
+<h1 id="welcome-message">Welcome to the enterprise user management system.</h1>
+<div id="inputForm">
+    <h2>Remove a user based on their e-mail:</h2>
+    <div>
+        <form id="actualForm">
+            <input type="text" placeholder="E-mail" name="email" id="email" #email/> <br>
+            <br>
+            <input type="button" id="removeUser" value="Remove" (click)="removeUser(email.value)"/>
+        </form>
+    </div>
+</div>
+
+<div id="container" *ngIf="">
+    <h1>User removed.</h1>
+</div>
+    

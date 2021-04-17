@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UpdateService } from './service/update.service';
+import { User } from '../model/user.model';
 
 @Component({
   selector: 'app-update',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
+  updated: boolean = false;
 
-  constructor() { }
+  constructor(private updateService: UpdateService) { }
 
   ngOnInit(): void {
   }
 
+  updateUser(username: string, password: string) {
+    console.log(username, password);
+    console.log("Called the updateUser from the updateService...");
+    this.updateService.updateUser(username, password);
+  }
 }
