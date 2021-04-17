@@ -35,13 +35,15 @@
 
     <h1 id="welcome-message">Welcome to the enterprise user management system.</h1>
 	<div id="inputForm">
-		<h2>Get user by name:</h2>
-		<p>Name:</p> 
+		<h2>Update a user's password based on their username:</h2>
 		<div>
-			<input type="text" name="name" id="name"/> <input type="button" id="showUsersByName" value="Get details"/>
+			<form id="actualForm">
+			<input type="text" placeholder="Username" name="username" id="username"/> <br>
+			<input type="text" placeholder="Password" name="password" id="password"/> <br>
+			<br>
+			<input type="button" id="updateUser" value="Update"/>
+			</form>
 		</div>
-		<p>Previous browsing action:</p><br>
-		<div id="filterHistory"></div>
 	</div>
 		
 	<div id="container">

@@ -35,13 +35,14 @@
 
     <h1 id="welcome-message">Welcome to the enterprise user management system.</h1>
 	<div id="inputForm">
-		<h2>Get user by name:</h2>
-		<p>Name:</p> 
+		<h2>Remove a user:</h2>
 		<div>
-			<input type="text" name="name" id="name"/> <input type="button" id="showUsersByName" value="Get details"/>
+			<form id="actualForm">
+			<input type="text" placeholder="E-mail" name="email" id="email"/> <br>
+			<br>
+			<input type="button" id="removeUser" value="Remove"/>
+			</form>
 		</div>
-		<p>Previous browsing action:</p><br>
-		<div id="filterHistory"></div>
 	</div>
 		
 	<div id="container">
