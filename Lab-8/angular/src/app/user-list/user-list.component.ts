@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../model/user.model';
+import { NameService } from '../name-search/service/name.service';
 import { RoleService } from '../role-search/service/role.service';
 
 @Component({
@@ -11,10 +12,10 @@ import { RoleService } from '../role-search/service/role.service';
 export class UserListComponent implements OnInit {
   users: User[] = [];
 
-  constructor(private roleService: RoleService) { }
+  constructor(private roleService: RoleService,
+              private nameService: NameService) { }
 
   ngOnInit(): void {
-    this.getUsersByRole("Dev");
   }
 
   getUsersByRole(role: string): void {
@@ -22,6 +23,6 @@ export class UserListComponent implements OnInit {
   }
 
   getUsersByName(name: string): void {
-
+    this.nameService.getUsersByName(name).subscribe(users => this.users = users);
   }
 }

@@ -1,6 +1,13 @@
-<p>user-list works!</p>
 <ul>
-    <li *ngFor="let user of users">
-        Username: {{user.username}}
-    </li>
+    <div *ngIf="users.length > 0">
+        <li *ngFor="let user of users">
+            Username: {{user.username}} <br/>
+            Name: {{user.name}} <br/>
+            Password: {{user.password}} <br/>
+            Date of birth: {{user.dateOfBirth}} <br/>
+            Role: {{user.role}} <br/>
+            E-mail: {{user.email}} <br/>
+            <hr>
+        </li>
+    </div>
 </ul>

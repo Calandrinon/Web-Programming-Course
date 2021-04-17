@@ -1,1 +1,12 @@
-<p>name-search works!</p>
+<h1 id="welcome-message">Welcome to the enterprise user management system.</h1>
+<div id="inputForm">
+    <h2>Get user by name:</h2>
+    <div>
+        <input type="text" name="name" placeholder="Name" id="name" #name/>
+        <input type="button" id="showUsersByName" value="Get details" (click)="searchButtonClick(name.value)"/>
+    </div>
+    <p>Previous browsing action:</p><br>
+    <div id="filterHistory">{{newFilterHistoryTerm}}</div>
+</div>
+
+<app-user-list></app-user-list>

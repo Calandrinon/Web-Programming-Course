@@ -1,0 +1,12 @@
+ul {
+	position: relative;
+	margin-top: 5vh;
+	text-align: center;
+	background-color: #383838;
+	border-radius: 20px;
+	color: white;
+	width: 50vw;
+	top: 5vh;
+	left: 25vw;
+	right: 25vw;
+}

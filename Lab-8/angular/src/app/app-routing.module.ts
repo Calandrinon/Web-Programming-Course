@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddComponent } from './add/add.component';
 import { HomeComponent } from './home/home.component';
 import { NameSearchComponent } from './name-search/name-search.component';
+import { NameService } from './name-search/service/name.service';
 import { RemoveComponent } from './remove/remove.component';
 import { RoleSearchComponent } from './role-search/role-search.component';
+import { RoleService } from './role-search/service/role.service';
 import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
@@ -18,6 +20,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [RoleService, NameService]
 })
 export class AppRoutingModule { }
