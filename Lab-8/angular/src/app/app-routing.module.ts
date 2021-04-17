@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddComponent } from './add/add.component';
+import { AddService } from './add/service/add.service';
 import { HomeComponent } from './home/home.component';
 import { NameSearchComponent } from './name-search/name-search.component';
 import { NameService } from './name-search/service/name.service';
@@ -21,6 +22,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [RoleService, NameService]
+  providers: [RoleService, NameService, AddService]
 })
 export class AppRoutingModule { }
