@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { RemoveComponent } from './remove/remove.component';
 import { UpdateComponent } from './update/update.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { UpdateComponent } from './update/update.component';
     AddComponent,
     RemoveComponent,
     UpdateComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
