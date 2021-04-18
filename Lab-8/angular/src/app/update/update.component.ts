@@ -15,9 +15,10 @@ export class UpdateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateUser(username: string, password: string) {
+  async updateUser(username: string, password: string) {
     console.log(username, password);
     console.log("Called the updateUser from the updateService...");
     this.updateService.updateUser(username, password);
+    this.updated = true;
   }
 }

@@ -19,6 +19,7 @@ export class RemoveComponent implements OnInit {
     console.log(email);
     console.log("Called the removeUser from the removeService...");
     this.removeService.removeUser(email);
+    this.removed = true;
   }
 
 }

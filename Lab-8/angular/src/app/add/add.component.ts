@@ -22,5 +22,6 @@ export class AddComponent implements OnInit {
     console.log(user);
     console.log("Called the addUser from the AddService...");
     this.addService.addUser(user);
+    this.added = true;
   }
 }
