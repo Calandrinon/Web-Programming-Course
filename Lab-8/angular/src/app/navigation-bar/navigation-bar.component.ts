@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-  tabs: string[] = ["Home", "Users and roles", "Search users by name", "Add a user", "Remove a user", "Update a user"];
 
   constructor() { }
 

@@ -1,0 +1,4 @@
+com/uppicvote/controller/AnotherUselessController.java
+ com.uppicvote.controller.AnotherUselessController
+com/uppicvote/controller/UselessController.java
+ com.uppicvote.controller.UselessController
