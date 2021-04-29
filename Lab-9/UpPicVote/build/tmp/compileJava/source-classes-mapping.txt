@@ -2,3 +2,13 @@ com/uppicvote/controller/AnotherUselessController.java
  com.uppicvote.controller.AnotherUselessController
 com/uppicvote/controller/UselessController.java
  com.uppicvote.controller.UselessController
+com/uppicvote/service/AuthenticationService.java
+ com.uppicvote.service.AuthenticationService
+com/uppicvote/repository/Repository.java
+ com.uppicvote.repository.Repository
+com/uppicvote/model/Image.java
+ com.uppicvote.model.Image
+com/uppicvote/controller/AuthenticationController.java
+ com.uppicvote.controller.AuthenticationController
+com/uppicvote/model/User.java
+ com.uppicvote.model.User
