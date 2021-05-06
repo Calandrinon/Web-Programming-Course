@@ -14,3 +14,5 @@ com/uppicvote/repository/Repository.java
  com.uppicvote.repository.Repository
 com/uppicvote/controller/AuthenticationController.java
  com.uppicvote.controller.AuthenticationController
+com/uppicvote/controller/PictureController.java
+ com.uppicvote.controller.PictureController

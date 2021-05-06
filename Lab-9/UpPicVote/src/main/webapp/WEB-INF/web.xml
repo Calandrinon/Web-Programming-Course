@@ -11,6 +11,10 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>com.uppicvote.controller.HomeController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PictureServlet</servlet-name>
+        <servlet-class>com.uppicvote.controller.PictureController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>AuthenticationServlet</servlet-name>
@@ -19,5 +23,9 @@
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PictureServlet</servlet-name>
+        <url-pattern>/pictures</url-pattern>
     </servlet-mapping>
 </web-app>

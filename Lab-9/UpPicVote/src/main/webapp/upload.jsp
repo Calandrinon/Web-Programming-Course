@@ -24,5 +24,12 @@
 </nav>
 
 <h1>Upload a picture</h1>
+
+<form action="/pictures" method="post" enctype="multipart/form-data">
+    <input type="text" name="description" />
+    <input type="file" name="file" />
+    <input type="submit" value="Submit"/>
+</form>
+
 </body>
 </html>
