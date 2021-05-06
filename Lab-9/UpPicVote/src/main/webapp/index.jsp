@@ -18,7 +18,7 @@
           <a href="/upload.jsp" class="menu_link"><div class="wrap"><span class="text">Upload a picture</span></div></a>
         </li>
         <li>
-          <a href="/view.jsp" class="menu_link"><div class="wrap"><span class="text">View other pictures</span></div></a>
+          <a href="/pictures" class="menu_link"><div class="wrap"><span class="text">View other pictures</span></div></a>
         </li>
       </ul>
     </nav>

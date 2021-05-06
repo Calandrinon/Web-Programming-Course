@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: calandrinon
   Date: 4/23/21
@@ -18,11 +18,24 @@
             <a href="/upload.jsp" class="menu_link"><div class="wrap"><span class="text">Upload a picture</span></div></a>
         </li>
         <li>
-            <a href="/view.jsp" class="menu_link"><div class="wrap"><span class="text">View other pictures</span></div></a>
+            <a href="/pictures" class="menu_link"><div class="wrap"><span class="text">View other pictures</span></div></a>
         </li>
     </ul>
 </nav>
 
 <h1>View pictures</h1>
+
+<%
+    List<String> filenames = (List<String>) request.getAttribute("filenames");
+    System.out.println(filenames.toString());
+for (String filename: filenames) {
+%>
+    <div>
+        <h3><%=filename%></h3>
+        <img src="Files/<%=filename%>">
+    </div>
+<% } %>
+
+
 </body>
 </html>

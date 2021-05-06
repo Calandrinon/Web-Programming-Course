@@ -6,6 +6,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FilenameUtils;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,11 +14,31 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PictureController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        File folder = new File("/home/calandrinon/WPTomcat/apache-tomcat-9.0.45/webapps/ROOT/Files");
+        File[] listOfFiles = folder.listFiles();
+
+        System.out.println("The list of images:");
+        if (listOfFiles.length > 0) {
+            for (File file: listOfFiles) {
+                System.out.println(file.getName());
+            }
+        } else {
+            System.out.println("No images uploaded.");
+        }
+
+        List<String> filenames = Arrays.stream(listOfFiles)
+                .map(File::getName)
+                .collect(Collectors.toList());
+
+        request.setAttribute("filenames", filenames);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     @Override
@@ -26,7 +47,7 @@ public class PictureController extends HttpServlet {
 
         if (isMultipart) {
             // Directory where files will be saved
-            File seshdir = new File("/home/calandrinon/WPTomcat/jspAssignment");
+            File seshdir = new File("/home/calandrinon/WPTomcat/apache-tomcat-9.0.45/webapps/ROOT/Files");
 
             if (!seshdir.exists()) {
                 seshdir.mkdirs();
@@ -65,11 +86,5 @@ public class PictureController extends HttpServlet {
                 e.printStackTrace();
             }
         }
-        /**
-        Part filePart = request.getPart("file"); // Retrieves <input type="file" name="file">
-        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
-        InputStream fileContent = filePart.getInputStream();
-        // ... (do your job here)
-         **/
     }
 }
