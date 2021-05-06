@@ -10,7 +10,19 @@
   <head>
     <title>Testing Java Servlets</title>
   </head>
+  <link href="styles.css" rel="stylesheet">
   <body>
-    <h1>This is index.jsp</h1>
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="/upload.jsp" class="menu_link"><div class="wrap"><span class="text">Upload a picture</span></div></a>
+        </li>
+        <li>
+          <a href="/view.jsp" class="menu_link"><div class="wrap"><span class="text">View other pictures</span></div></a>
+        </li>
+      </ul>
+    </nav>
+
+    <h1>Welcome!</h1>
   </body>
 </html>

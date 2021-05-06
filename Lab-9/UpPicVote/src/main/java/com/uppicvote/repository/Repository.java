@@ -16,8 +16,8 @@ public class Repository {
 
     public void connect() {
         try {
-            Class.forName("org.gjt.mm.mysql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/mysql", "root", "");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/UpPicVote", "root", "");
             statement = con.createStatement();
         } catch(Exception ex) {
             System.out.println("Connection error: "+ex.getMessage());
