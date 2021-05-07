@@ -10,8 +10,8 @@
 <html>
 <head>
     <title>Testing Java Servlets</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<link href="styles.css" rel="stylesheet">
 <body>
 <nav class="navbar">
     <ul>
@@ -26,18 +26,20 @@
 
 <h1>View pictures</h1>
 
-<%
-    List<Image> images = (List<Image>) request.getAttribute("images");
-    System.out.println(images.toString());
-for (Image image: images) {
-    String[] tokens = image.getFilename().split("_");
-%>
-    <div>
-        <h3><%=image.getDescription()%></h3>
-        <h4> Posted by: <%=tokens[0]%></h4>
+<div id="imageContainer">
+    <%
+        List<Image> images = (List<Image>) request.getAttribute("images");
+        System.out.println(images.toString());
+    for (Image image: images) {
+        String[] tokens = image.getFilename().split("_");
+    %>
+    <div id="post">
         <img src="Files/<%=image.getFilename()%>">
+        <h4> Description: <%=image.getDescription()%></h4>
+        <h4> Posted by: <%=tokens[0]%></h4>
     </div>
-<% } %>
+    <% } %>
+</div>
 
 
 </body>
