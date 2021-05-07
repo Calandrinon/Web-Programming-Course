@@ -1,4 +1,5 @@
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.uppicvote.model.Image" %><%--
   Created by IntelliJ IDEA.
   User: calandrinon
   Date: 4/23/21
@@ -26,13 +27,15 @@
 <h1>View pictures</h1>
 
 <%
-    List<String> filenames = (List<String>) request.getAttribute("filenames");
-    System.out.println(filenames.toString());
-for (String filename: filenames) {
+    List<Image> images = (List<Image>) request.getAttribute("images");
+    System.out.println(images.toString());
+for (Image image: images) {
+    String[] tokens = image.getFilename().split("_");
 %>
     <div>
-        <h3><%=filename%></h3>
-        <img src="Files/<%=filename%>">
+        <h3><%=image.getDescription()%></h3>
+        <h4> Posted by: <%=tokens[0]%></h4>
+        <img src="Files/<%=image.getFilename()%>">
     </div>
 <% } %>
 

@@ -32,6 +32,7 @@ public class PictureController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        /**
         File folder = new File("/home/calandrinon/WPTomcat/apache-tomcat-9.0.45/webapps/ROOT/Files");
         File[] listOfFiles = folder.listFiles();
 
@@ -47,8 +48,10 @@ public class PictureController extends HttpServlet {
         List<String> filenames = Arrays.stream(listOfFiles)
                 .map(File::getName)
                 .collect(Collectors.toList());
+        **/
+        List<Image> images = this.imageService.getAllImages();
 
-        request.setAttribute("filenames", filenames);
+        request.setAttribute("images", images);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view.jsp");
         requestDispatcher.forward(request, response);
     }

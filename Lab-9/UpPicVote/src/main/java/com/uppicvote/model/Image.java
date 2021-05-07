@@ -64,4 +64,7 @@ public class Image {
         this.description = description;
     }
 
+    public String toString() {
+        return "{Id: " + id + "; Filename: " + filename + "; Votes: " + numberOfVotes + "; userId: " + userId + "; Description: " + description + "}";
+    }
 }
