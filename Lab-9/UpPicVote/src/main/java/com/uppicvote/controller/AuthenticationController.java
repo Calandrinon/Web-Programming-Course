@@ -8,6 +8,7 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -27,6 +28,8 @@ public class AuthenticationController extends HttpServlet {
         PrintWriter printWriter = response.getWriter();
         //printWriter.println("The user " + username + ":" + password + " wants to log in...");
         if (this.service.authenticateUser(username, password)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
             response.sendRedirect("/index.jsp");
         } else {
             printWriter.println("Bad username or password!");

@@ -50,7 +50,31 @@ public class Repository {
         try {
             resultSet = statement.executeQuery("SELECT * FROM Images WHERE UserId = " + userId);
             while (resultSet.next()) {
-                images.add(new Image(resultSet.getInt(1), resultSet.getString(2)));
+                Image image = new Image(resultSet.getString(4), resultSet.getString(3));
+                image.setId(resultSet.getInt(1));
+                image.setUserId(resultSet.getInt(2));
+                image.setNumberOfVotes(resultSet.getInt(5));
+                images.add(image);
+            }
+            resultSet.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return images;
+    }
+
+    public ArrayList<Image> getAllImages() {
+        ArrayList<Image> images = new ArrayList<Image>();
+        ResultSet resultSet;
+
+        try {
+            resultSet = statement.executeQuery("SELECT * FROM Images");
+            while (resultSet.next()) {
+                Image image = new Image(resultSet.getString(4), resultSet.getString(3));
+                image.setId(resultSet.getInt(1));
+                image.setUserId(resultSet.getInt(2));
+                image.setNumberOfVotes(resultSet.getInt(5));
+                images.add(image);
             }
             resultSet.close();
         } catch (SQLException e) {
@@ -62,12 +86,45 @@ public class Repository {
     public boolean updateImage(Image image) {
         int r = 0;
         try {
-            r = statement.executeUpdate("UPDATE Images SET Votes=" + image.getNumberOfVotes() + " WHERE ImageId=" + image.getId());
+            r = statement.executeUpdate("UPDATE Images SET NumberOfVotes=" + image.getNumberOfVotes() + " WHERE ImageId=" + image.getId());
         } catch (SQLException e) {
             e.printStackTrace();
         }
         if (r>0) return true;
         else return false;
+    }
+
+
+    public Optional<Image> saveImage(Image image) {
+        ResultSet resultSet;
+
+        try {
+            String sqlStatement = "INSERT INTO Images (UserId, Description, Filename, NumberOfVotes) VALUES (" + image.getUserId() + ", '" + image.getDescription() + "','" + image.getFilename() + "'," + image.getNumberOfVotes() + ")";
+            System.out.println("<REPOSITORY> The inserted image: " + sqlStatement);
+            statement.executeUpdate(sqlStatement);
+            return Optional.of(image);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return Optional.empty();
+        }
+    }
+
+    public Integer getUserId(String username) {
+        ResultSet resultSet;
+        Integer userId = null;
+
+        try {
+            resultSet = statement.executeQuery("SELECT ID FROM Users WHERE Username = '" + username + "'");
+
+            while (resultSet.next()) {
+                userId = resultSet.getInt(1);
+            }
+
+            resultSet.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userId;
     }
 
 }

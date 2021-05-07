@@ -15,4 +15,8 @@ public class AuthenticationService {
     public boolean authenticateUser(String username, String password) {
         return this.repository.authenticate(username, password).isPresent();
     }
+
+    public Integer getUserId(String username) {
+        return this.repository.getUserId(username);
+    }
 }

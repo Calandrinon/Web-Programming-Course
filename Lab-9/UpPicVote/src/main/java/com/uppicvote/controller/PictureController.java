@@ -1,5 +1,9 @@
 package com.uppicvote.controller;
 
+import com.uppicvote.model.Image;
+import com.uppicvote.repository.Repository;
+import com.uppicvote.service.AuthenticationService;
+import com.uppicvote.service.ImageService;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -11,12 +15,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class PictureController extends HttpServlet {
+    private ImageService imageService;
+    private AuthenticationService authenticationService;
+
+    public PictureController() {
+        this.imageService = new ImageService(new Repository());
+        this.authenticationService = new AuthenticationService(new Repository());
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,16 +64,25 @@ public class PictureController extends HttpServlet {
 
             try {
                 List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+                Image savedImage = new Image("", "");
 
                 for (FileItem item : items) {
                     if (item.isFormField()) {
                         String fieldname = item.getFieldName();
                         String fieldvalue = item.getString();
                         System.out.println("item.isFormField() for regular fields: " + fieldname + "->" + fieldvalue);
+                        savedImage.setDescription(fieldvalue);
                     } else {
+                        HttpSession session = request.getSession();
+                        String username = (String)session.getAttribute("username");
                         String fieldname = item.getFieldName();
-                        String filename = FilenameUtils.getName(item.getName());
+                        String filename = username + "_" + FilenameUtils.getName(item.getName());
                         System.out.println("item.isFormField() for file fields: " + fieldname + "->" + filename);
+                        savedImage.setFilename(filename);
+                        Integer userId = this.authenticationService.getUserId(username);
+                        System.out.println("Trying to obtain the userId...");
+                        System.out.println("The userId is: " + userId);
+                        savedImage.setUserId(userId);
 
                         byte[] image = item.get();
                         File file = new File(directory, filename);
@@ -77,6 +98,8 @@ public class PictureController extends HttpServlet {
                         fileOutputStreamPersistence.write(image);
                         fileOutputStreamPersistence.flush();
                         System.out.println("The image should now be saved. Enjoy.");
+
+                        this.imageService.saveImage(savedImage);
                     }
                 }
             } catch (FileUploadException e) {
