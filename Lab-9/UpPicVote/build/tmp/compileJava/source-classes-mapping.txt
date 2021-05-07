@@ -6,16 +6,16 @@ com/uppicvote/controller/HomeController.java
  com.uppicvote.controller.HomeController
 com/uppicvote/model/User.java
  com.uppicvote.model.User
-com/uppicvote/controller/AuthenticationController.java
- com.uppicvote.controller.AuthenticationController
+com/uppicvote/model/Image.java
+ com.uppicvote.model.Image
 com/uppicvote/controller/PictureController.java
  com.uppicvote.controller.PictureController
 com/uppicvote/service/AuthenticationService.java
  com.uppicvote.service.AuthenticationService
 com/uppicvote/repository/Repository.java
  com.uppicvote.repository.Repository
-com/uppicvote/model/Image.java
- com.uppicvote.model.Image
+com/uppicvote/controller/AuthenticationController.java
+ com.uppicvote.controller.AuthenticationController
 com/uppicvote/service/ImageService.java
  com.uppicvote.service.ImageService
 com/uppicvote/controller/VotingController.java

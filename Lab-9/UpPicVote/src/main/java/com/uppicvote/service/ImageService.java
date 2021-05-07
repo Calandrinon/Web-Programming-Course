@@ -17,11 +17,22 @@ public class ImageService {
     }
 
     public boolean saveImage(Image image) {
-
         return this.repository.saveImage(image).isPresent();
     }
 
     public boolean updateImage(Image image) {
         return this.repository.updateImage(image);
+    }
+
+    public boolean upvoteImage(Image image, Integer userId) {
+        return this.repository.modifyVote(image, userId, 1);
+    }
+
+    public boolean downvoteImage(Image image, Integer userId) {
+        return this.repository.modifyVote(image, userId, -1);
+    }
+
+    public List<Image> getUserImages(Integer userId) {
+        return this.repository.getUserImages(userId);
     }
 }

@@ -11,6 +11,8 @@
 <head>
     <title>Testing Java Servlets</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
 </head>
 <body>
 <nav class="navbar">
@@ -41,7 +43,10 @@
     <div id="post">
         <img src="Files/<%=image.getFilename()%>">
         <h4> Description: <%=image.getDescription()%></h4>
+        <h4> Rating: <%=image.getNumberOfVotes()%></h4>
         <h4> Posted by: <%=tokens[0]%></h4>
+        <button class="upvoteButton" type="button" id="upvote_<%=image.getFilename()%>">^</button>
+        <button class="downvoteButton" type="button" id="downvote_<%=image.getFilename()%>">v</button>
     </div>
     <% } %>
 </div>

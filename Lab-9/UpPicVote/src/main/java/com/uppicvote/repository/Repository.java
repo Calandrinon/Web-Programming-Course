@@ -95,6 +95,34 @@ public class Repository {
     }
 
 
+    public boolean modifyVote(Image image, Integer userId, Integer point) {
+        ResultSet resultSet;
+
+        try {
+            resultSet = statement.executeQuery("SELECT * FROM Images_Users WHERE UserId = " + userId + " AND ImageId=" + image.getId());
+
+            System.out.println("IN THE REPOSITORY:");
+            if (resultSet.next()) {
+                System.out.println("Looks like the user has already rated this image.");
+                return false;
+            } else {
+                System.out.println("The user hasn't yet rated this image.");
+                String sqlStatement = "UPDATE Images SET NumberOfVotes = NumberOfVotes + (" + point + ")" + " WHERE ImageId = " + image.getId();
+                statement.executeUpdate(sqlStatement);
+                sqlStatement = "INSERT INTO Images_Users (ImageId, UserId) VALUES (" + image.getId() + "," + userId + ")";
+                statement.executeUpdate(sqlStatement);
+            }
+
+            resultSet.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+
     public Optional<Image> saveImage(Image image) {
         ResultSet resultSet;
 
