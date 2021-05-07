@@ -47,11 +47,8 @@ public class PictureController extends HttpServlet {
 
         if (isMultipart) {
             // Directory where files will be saved
-            File seshdir = new File("/home/calandrinon/WPTomcat/apache-tomcat-9.0.45/webapps/ROOT/Files");
-
-            if (!seshdir.exists()) {
-                seshdir.mkdirs();
-            }
+            File directory = new File("/home/calandrinon/WPTomcat/apache-tomcat-9.0.45/webapps/ROOT/Files");
+            File persistenceDirectory = new File("/home/calandrinon/Documents/an2sem2/Web-Programming/Lab-9/UpPicVote/src/main/webapp/Files");
 
             try {
                 List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
@@ -67,24 +64,41 @@ public class PictureController extends HttpServlet {
                         System.out.println("item.isFormField() for file fields: " + fieldname + "->" + filename);
 
                         byte[] image = item.get();
-                        System.out.println("Image bytes:");
-                        System.out.println(Arrays.toString(image));
-                        System.out.println("============================================================");
-                        File file = new File(seshdir, filename);
-                        if (file.createNewFile()) {
-                            System.out.println("The file has been created because it didn't exist. Everything's fine...");
-                        } else {
-                            System.out.println("The file already exists.");
-                        }
+                        File file = new File(directory, filename);
+                        File persistenceFile = new File(persistenceDirectory, filename);
+                        this.createTemporaryFile(file);
+                        this.createPersistenceFile(persistenceFile);
+
                         FileOutputStream fileOutputStream = new FileOutputStream(file);
                         fileOutputStream.write(image);
                         fileOutputStream.flush();
+
+                        FileOutputStream fileOutputStreamPersistence = new FileOutputStream(persistenceFile);
+                        fileOutputStreamPersistence.write(image);
+                        fileOutputStreamPersistence.flush();
                         System.out.println("The image should now be saved. Enjoy.");
                     }
                 }
             } catch (FileUploadException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private void createTemporaryFile(File file) throws IOException {
+        if (file.createNewFile()) {
+            System.out.println("The file has been created because it didn't exist. Everything's fine...");
+        } else {
+            System.out.println("The file already exists.");
+        }
+    }
+
+
+    private void createPersistenceFile(File persistenceFile) throws IOException {
+        if (persistenceFile.createNewFile()) {
+            System.out.println("The persistence file has been created because it didn't exist. Everything's fine...");
+        } else {
+            System.out.println("The persistance file already exists.");
         }
     }
 }
