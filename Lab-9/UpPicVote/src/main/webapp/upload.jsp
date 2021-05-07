@@ -23,6 +23,11 @@
     </ul>
 </nav>
 
+<%  String username = (String) session.getAttribute("username");
+    if (username != null) {
+        System.out.println("Welcome, "+ username + "!");
+%>
+
 <h1>Upload a picture</h1>
 
 <form action="/pictures" method="post" enctype="multipart/form-data">
@@ -30,6 +35,9 @@
     <input type="file" name="file" />
     <input type="submit" value="Submit"/>
 </form>
+<%  } else { %>
+        <h1 style="color: red;"> You need to log into your account before uploading images! </h1>
+<%  }  %>
 
 </body>
 </html>

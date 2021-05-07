@@ -24,6 +24,11 @@
     </ul>
 </nav>
 
+<%  String username = (String) session.getAttribute("username");
+    if (username != null) {
+        System.out.println("Welcome, "+ username + "!");
+%>
+
 <h1>View pictures</h1>
 
 <div id="imageContainer">
@@ -40,6 +45,10 @@
     </div>
     <% } %>
 </div>
+
+<%  } else { %>
+<h1 style="color: red;"> You need to log into your account before viewing images! </h1>
+<%  }  %>
 
 
 </body>

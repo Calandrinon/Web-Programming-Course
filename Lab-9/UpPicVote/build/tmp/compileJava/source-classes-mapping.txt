@@ -18,3 +18,5 @@ com/uppicvote/model/Image.java
  com.uppicvote.model.Image
 com/uppicvote/service/ImageService.java
  com.uppicvote.service.ImageService
+com/uppicvote/controller/VotingController.java
+ com.uppicvote.controller.VotingController
