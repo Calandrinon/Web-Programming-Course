@@ -32,8 +32,16 @@ public class PictureController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Image> images = this.imageService.getAllImages();
-
+        String requestTopNParameter = (String)request.getAttribute("topN");
+        System.out.println("REQUEST TOP N PARAMETER: " + requestTopNParameter);
+        List<Image> images = null;
+        if (requestTopNParameter == null) {
+            images = this.imageService.getAllImages();
+        } else {
+            Integer topN = Integer.parseInt(requestTopNParameter);
+            images = this.imageService.getTheTopNImages(topN);
+        }
+        System.out.println(images.size());
         request.setAttribute("images", images);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view.jsp");
         requestDispatcher.forward(request, response);

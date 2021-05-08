@@ -41,4 +41,5 @@ public class VotingController extends HttpServlet {
             out.flush();
         }
     }
+
 }

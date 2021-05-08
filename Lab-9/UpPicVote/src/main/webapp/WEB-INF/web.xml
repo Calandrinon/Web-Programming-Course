@@ -15,6 +15,10 @@
         <servlet-name>VotingServlet</servlet-name>
         <servlet-class>com.uppicvote.controller.VotingController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FilterServlet</servlet-name>
+        <servlet-class>com.uppicvote.controller.FilterController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>AuthenticationServlet</servlet-name>
@@ -27,5 +31,9 @@
     <servlet-mapping>
         <servlet-name>VotingServlet</servlet-name>
         <url-pattern>/vote</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FilterServlet</servlet-name>
+        <url-pattern>/filter</url-pattern>
     </servlet-mapping>
 </web-app>

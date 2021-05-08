@@ -31,9 +31,9 @@
         System.out.println("Welcome, "+ username + "!");
 %>
 
-<h1>View pictures</h1>
-
 <div id="imageContainer">
+    <h3>Pick the number N for displaying the top N pictures by rating: <input type="text" id="numberTopN"> <button id="topNButton">Get the top N posts</button></h3>
+    <div id="postContainer">
     <%
         List<Image> images = (List<Image>) request.getAttribute("images");
         System.out.println(images.toString());
@@ -50,6 +50,7 @@
         <h4 id="response_<%=image.getFilename()%>"></h4>
     </div>
     <% } %>
+    </div>
 </div>
 
 <%  } else { %>

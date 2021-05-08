@@ -155,4 +155,25 @@ public class Repository {
         return userId;
     }
 
+    public ArrayList<Image> getTheTopNImages(Integer topN) {
+        ArrayList<Image> images = new ArrayList<Image>();
+        ResultSet resultSet;
+
+        try {
+            resultSet = statement.executeQuery("SELECT * FROM Images ORDER BY NumberOfVotes DESC LIMIT " + topN);
+            while (resultSet.next()) {
+                Image image = new Image(resultSet.getString(4), resultSet.getString(3));
+                image.setId(resultSet.getInt(1));
+                image.setUserId(resultSet.getInt(2));
+                image.setNumberOfVotes(resultSet.getInt(5));
+                images.add(image);
+            }
+            resultSet.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return images;
+    }
+
 }
+

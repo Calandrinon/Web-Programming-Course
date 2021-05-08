@@ -16,6 +16,10 @@ public class ImageService {
         return this.repository.getAllImages();
     }
 
+    public List<Image> getTheTopNImages(Integer topN) {
+        return this.repository.getTheTopNImages(topN);
+    }
+
     public boolean saveImage(Image image) {
         return this.repository.saveImage(image).isPresent();
     }
