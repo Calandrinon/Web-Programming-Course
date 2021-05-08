@@ -28,3 +28,5 @@ com/uppicvote/model/ImagesDto.java
  com.uppicvote.model.ImagesDto
 com/uppicvote/controller/FilterController.java
  com.uppicvote.controller.FilterController
+com/uppicvote/controller/LogoutController.java
+ com.uppicvote.controller.LogoutController

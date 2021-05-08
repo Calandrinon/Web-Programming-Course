@@ -1,3 +1,7 @@
+function logout() {
+    $.post("/logout");
+}
+
 function upvoteImage(filename, callback) {
     var parts = filename.split('_');
     var actualFilename = parts.slice(1).join('_');
@@ -18,6 +22,10 @@ function sendRequestsForTheTopNPosts(n, callback) {
 }
 
 function attachEventHandlers() {
+    $("#logoutLink").click(function () {
+        logout();
+    });
+
     $(".upvoteButton").click(function() {
         console.log("The id of this upvote button: " + $(this).attr("id"));
         let id = $(this).attr("id");
