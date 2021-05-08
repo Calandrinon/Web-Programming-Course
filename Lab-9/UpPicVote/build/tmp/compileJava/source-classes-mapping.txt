@@ -18,5 +18,9 @@ com/uppicvote/controller/AuthenticationController.java
  com.uppicvote.controller.AuthenticationController
 com/uppicvote/service/ImageService.java
  com.uppicvote.service.ImageService
+com/uppicvote/model/BasicResponse.java
+ com.uppicvote.model.BasicResponse
+com/uppicvote/service/VotingService.java
+ com.uppicvote.service.VotingService
 com/uppicvote/controller/VotingController.java
  com.uppicvote.controller.VotingController
