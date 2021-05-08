@@ -67,12 +67,6 @@ $(document).ready(function(){
         console.log("The topNString is: " + topNString);
         console.log("The topNInteger is: " + topNInteger);
         sendRequestsForTheTopNPosts(topNInteger, function(response) {
-            /**
-            console.log("This is the response with the top N images from the server: " + response);
-            console.log("images=", response["images"]);
-            console.log("image[0]=", response["images"][0]['filename']);
-             **/
-
             let postContainer = document.getElementById("postContainer");
             postContainer.innerHTML = '';
 
@@ -97,12 +91,12 @@ $(document).ready(function(){
                  posterTag.textContent = "Posted by: " + poster;
                  let upvoteButtonTag = document.createElement('button');
                  upvoteButtonTag.setAttribute('id', 'upvote_'+filename);
-                 upvoteButtonTag.setAttribute('class', 'upvoteButton');
+                 upvoteButtonTag.setAttribute('class', 'upvoteButton greyButtons');
                  upvoteButtonTag.setAttribute('type', 'button');
                  upvoteButtonTag.textContent = "^";
                 let downvoteButtonTag = document.createElement('button');
                 downvoteButtonTag.setAttribute('id', 'downvote_'+filename);
-                downvoteButtonTag.setAttribute('class', 'downvoteButton');
+                downvoteButtonTag.setAttribute('class', 'downvoteButton greyButtons');
                 downvoteButtonTag.setAttribute('type', 'button');
                 downvoteButtonTag.textContent = "v";
                 let responseTag = document.createElement('h4');

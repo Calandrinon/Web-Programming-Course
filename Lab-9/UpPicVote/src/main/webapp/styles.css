@@ -5,10 +5,24 @@
     text-decoration: none;
 }
 
+#topNButton {
+    background-color: #383838;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 .navbar{
     width: 100%;
     height: 60px;
-    background: lightblue;
+    background: #383838;
 }
 
 .navbar > ul {
@@ -66,7 +80,8 @@
 }
 
 #post {
-    border: 5px solid blue;
+    border: 5px solid #383838;
+    border-radius: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -79,4 +94,14 @@
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+}
+
+.greyButtons {
+    background-color: #383838;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    height: 30px;
+    width: 50px;
+    cursor: pointer;
 }
