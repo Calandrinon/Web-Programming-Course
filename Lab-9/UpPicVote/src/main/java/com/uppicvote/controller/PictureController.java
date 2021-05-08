@@ -91,6 +91,8 @@ public class PictureController extends HttpServlet {
             } catch (FileUploadException e) {
                 e.printStackTrace();
             }
+
+            response.sendRedirect("/pictures");
         }
     }
 
