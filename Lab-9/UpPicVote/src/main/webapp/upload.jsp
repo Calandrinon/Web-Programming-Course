@@ -23,10 +23,17 @@
         <li>
             <a href="/" class="menu_link" id="logoutLink"><div class="wrap"><span class="text">Logout</span></div></a>
         </li>
+        <%  String username = (String) session.getAttribute("username");
+            if (username == null) {
+        %>
+        <li>
+            <a href="/" class="menu_link"><div class="wrap"><span class="text">Login</span></div></a>
+        </li>
+        <% } %>
     </ul>
 </nav>
 
-<%  String username = (String) session.getAttribute("username");
+<%
     if (username != null) {
         System.out.println("Welcome, "+ username + "!");
 %>
