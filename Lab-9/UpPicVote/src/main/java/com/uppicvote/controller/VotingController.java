@@ -34,9 +34,9 @@ public class VotingController extends HttpServlet {
         String username = (String) session.getAttribute("username");
 
         if (username != null) {
+            PrintWriter out = response.getWriter();
             String jsonResponse = this.votingService.votePicture(request, username);
             response.setContentType("application/json");
-            PrintWriter out = response.getWriter();
             out.print(jsonResponse);
             out.flush();
         }

@@ -8,8 +8,8 @@ com/uppicvote/model/User.java
  com.uppicvote.model.User
 com/uppicvote/model/Image.java
  com.uppicvote.model.Image
-com/uppicvote/controller/VotingController.java
- com.uppicvote.controller.VotingController
+com/uppicvote/controller/PictureController.java
+ com.uppicvote.controller.PictureController
 com/uppicvote/service/AuthenticationService.java
  com.uppicvote.service.AuthenticationService
 com/uppicvote/repository/Repository.java
@@ -22,5 +22,5 @@ com/uppicvote/model/BasicResponse.java
  com.uppicvote.model.BasicResponse
 com/uppicvote/service/VotingService.java
  com.uppicvote.service.VotingService
-com/uppicvote/controller/PictureController.java
- com.uppicvote.controller.PictureController
+com/uppicvote/controller/VotingController.java
+ com.uppicvote.controller.VotingController
