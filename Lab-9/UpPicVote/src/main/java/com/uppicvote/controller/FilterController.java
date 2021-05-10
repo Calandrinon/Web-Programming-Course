@@ -34,20 +34,19 @@ public class FilterController extends HttpServlet {
         List<Image> images = null;
         Integer topN = null;
 
-        if (requestTopNParameter == null) {
-            images = this.imageService.getAllImages();
-            topN = images.size();
-        } else {
+        if (!requestTopNParameter.equals("NaN")) {
             topN = Integer.parseInt(requestTopNParameter);
             images = this.imageService.getTheTopNImages(topN);
-
-            ImagesDto imagesDto = new ImagesDto(images);
-
-            PrintWriter out = response.getWriter();
-            String jsonResponse = new Gson().toJson(imagesDto);
-            response.setContentType("application/json");
-            out.print(jsonResponse);
-            out.flush();
+        } else {
+            images = this.imageService.getAllImages();
         }
+
+        ImagesDto imagesDto = new ImagesDto(images);
+
+        PrintWriter out = response.getWriter();
+        String jsonResponse = new Gson().toJson(imagesDto);
+        response.setContentType("application/json");
+        out.print(jsonResponse);
+        out.flush();
     }
 }

@@ -45,7 +45,7 @@
     <form action="/pictures" method="post" enctype="multipart/form-data">
         <input type="text" name="description" />
         <input type="file" name="file" />
-        <input type="submit" value="Submit"/>
+        <input class="greyButtons" type="submit" value="Submit"/>
     </form>
 </div>
 <%  } else { %>
