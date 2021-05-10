@@ -20,14 +20,15 @@
         <li>
             <a href="/pictures" class="menu_link"><div class="wrap"><span class="text">View other pictures</span></div></a>
         </li>
-        <li>
-            <a href="/" class="menu_link" id="logoutLink"><div class="wrap"><span class="text">Logout</span></div></a>
-        </li>
         <%  String username = (String) session.getAttribute("username");
             if (username == null) {
         %>
         <li>
             <a href="/" class="menu_link"><div class="wrap"><span class="text">Login</span></div></a>
+        </li>
+        <% } else { %>
+        <li>
+            <a href="/" class="menu_link" id="logoutLink"><div class="wrap"><span class="text">Logout</span></div></a>
         </li>
         <% } %>
     </ul>
