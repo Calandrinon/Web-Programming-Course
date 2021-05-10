@@ -38,13 +38,15 @@
         System.out.println("Welcome, "+ username + "!");
 %>
 
-<h1>Upload a picture</h1>
+<div id="uploadForm">
+    <h1>Upload a picture</h1>
 
-<form action="/pictures" method="post" enctype="multipart/form-data">
-    <input type="text" name="description" />
-    <input type="file" name="file" />
-    <input type="submit" value="Submit"/>
-</form>
+    <form action="/pictures" method="post" enctype="multipart/form-data">
+        <input type="text" name="description" />
+        <input type="file" name="file" />
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
 <%  } else { %>
         <h1 style="color: red;"> You need to log into your account before uploading images! </h1>
 <%  }  %>

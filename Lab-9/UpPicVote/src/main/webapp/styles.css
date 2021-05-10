@@ -87,6 +87,7 @@
     margin-right: auto;
     width: 50%;
     margin-bottom: 25px;
+    padding: 25px;
 }
 
 #post > img, h3, h4 {
@@ -94,6 +95,11 @@
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+}
+
+#post > img {
+    border: 5px solid #383838;
+    border-radius: 20px;
 }
 
 .greyButtons {
@@ -104,4 +110,17 @@
     height: 30px;
     width: 50px;
     cursor: pointer;
+}
+
+#uploadForm {
+    background-color: #f5f5f0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 5px solid #383838;
+    border-radius: 20px;
+    width: 50%;
+    margin-top: 10%;
+    padding: 25px;
 }

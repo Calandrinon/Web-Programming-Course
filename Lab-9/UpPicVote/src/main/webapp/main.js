@@ -43,6 +43,9 @@ function attachEventHandlers() {
             }
 
             document.getElementById(idOfTheResponseMessage).innerHTML = message;
+            setTimeout(() => {
+                document.getElementById(idOfTheResponseMessage).innerHTML = '';
+            }, 3000);
         });
     });
 
@@ -62,6 +65,9 @@ function attachEventHandlers() {
                 document.getElementById("rating_"+actualFilename).innerHTML = oldRating - 1;
             }
             document.getElementById(idOfTheResponseMessage).innerHTML = message;
+            setTimeout(() => {
+                document.getElementById(idOfTheResponseMessage).innerHTML = '';
+            }, 3000);
         });
     });
 }
