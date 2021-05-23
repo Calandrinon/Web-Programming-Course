@@ -9,6 +9,12 @@ using EnterpriseUserManagementSystem_ActualProject.Models;
 
 namespace EnterpriseUserManagementSystem_ActualProject.Controllers
 {
+    /// <summary>
+    /// user: sa
+    /// pass: caQg5T2Geuuh8N9NJ4WX
+    ///
+    /// Server=localhost;Database=EnterpriseUserManagementSystem;User Id=sa;Password=caQg5T2Geuuh8N9NJ4WX;
+    /// </summary>
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
