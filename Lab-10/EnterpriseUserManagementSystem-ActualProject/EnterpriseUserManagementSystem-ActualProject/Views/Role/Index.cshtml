@@ -2,18 +2,24 @@
     ViewData["Title"] = "Get users by role";
 }
 
+ <script src="~/lib/jquery/dist/jquery.js"></script>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jq
+uery/3.5.1/jquery.min.js"></script>
 <script>
-/**
-    $(document).ready(function(){
-		$("#registerButton").click(function() {
-			$.post("/Auth/Register", {username: $("#username").val(), password: $("#password").val()},
-				function(data,status) {
+		$(document).ready(function(){
+			$("#button").click(function() {
+				$.get("/Role/GetUsersAsHTML", {role: $("#role").val()},
+					function(data,status) {
 					$("#maindiv").html(data);
 				});
+			});
 		});
-	});
-	**/
 </script>
 
 <h1>Get users by role</h1>
 
+Role: <input type="text" id="role" /><br />
+    <input id="button" type="button" value="Get users by role"/>
+    Users:
+    <div id="maindiv"></div><br />

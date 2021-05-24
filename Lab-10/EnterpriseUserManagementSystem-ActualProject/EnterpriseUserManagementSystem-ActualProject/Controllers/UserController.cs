@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using EnterpriseUserManagementSystem_ActualProject.Data;
@@ -30,8 +31,7 @@ namespace EnterpriseUserManagementSystem_ActualProject.Controllers
 
         public string GetUsersAsHTML(string name)
         {
-            List<User> users = _usersContext.Users.ToList();
-
+            Console.WriteLine("The input: " + name);
             string result = "<table>" +
                             "<thead>" +
                             "<th>Id</th>" +
@@ -42,12 +42,24 @@ namespace EnterpriseUserManagementSystem_ActualProject.Controllers
                             "<th>Role</th>" +
                             "<th>E-mail</th>" +
                             "</thead>";
+            
+            List<User> users = _usersContext.Users.ToList();
+            if (name == "")
+            {
+                foreach (User user in users)
+                {
+                    result += "<tr><td>" + user.Id + "</td><td>" + user.Name + "</td><td>" + user.Username+ "</td><td>" + user.Password + "</td><td>" + user.dateOfBirth+ "</td><td>" + user.Role + "</td><td>" + user.Email + "</td><td></tr>";
+                }
+
+                return result;
+            }
+
 
             foreach (User user in users)
             {
                 if (user.Name.Contains(name))
                 {
-                    result += "<tr><td>" + user.Id + "</td><td>" + user.Name + "</td><td>" + user.Username+ "</td><td>" + user.Password + "</td><td>" + user.dateOfBirth+ "</td><td>" + user.Email + "</td><td></tr>";
+                    result += "<tr><td>" + user.Id + "</td><td>" + user.Name + "</td><td>" + user.Username+ "</td><td>" + user.Password + "</td><td>" + user.dateOfBirth+ "</td><td>" + user.Role + "</td><td>" + user.Email + "</td><td></tr>";
                 }
             }
 
