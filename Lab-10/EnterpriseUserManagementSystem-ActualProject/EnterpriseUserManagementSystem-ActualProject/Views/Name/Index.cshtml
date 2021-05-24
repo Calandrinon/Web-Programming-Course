@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Get users by name";
+}
+
+ <script src="~/lib/jquery/dist/jquery.js"></script>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jq
+uery/3.5.1/jquery.min.js"></script>
+<script>
+		$(document).ready(function(){
+			$("#button").click(function() {
+				$.get("/User/GetUsersAsHTML", {name: $("#name").val()},
+					function(data,status) {
+					$("#maindiv").html(data);
+				});
+			});
+		});
+</script>
+
+<h1>Get users by name</h1>
+
+Name: <input type="text" id="name" /><br />
+    <input id="button" type="button" value="Get users by name"/>
+    Users:
+    <div id="maindiv"></div><br />

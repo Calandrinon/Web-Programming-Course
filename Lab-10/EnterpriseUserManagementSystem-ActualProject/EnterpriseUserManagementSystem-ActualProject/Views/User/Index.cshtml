@@ -17,3 +17,30 @@
 
 <h1>Get users by name</h1>
 
+@{
+	List<User> users = (List<User>) ViewData["allUsers"];
+}
+
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Username</th>
+		<th>Password</th>
+		<th>Date of birth</th>
+		<th>Role</th>
+		<th>E-mail</th>
+	</tr>
+	@foreach (User user in users)
+	{
+		<tr>
+			<td>@user.Id</td>
+			<td>@user.Name</td>
+			<td>@user.Username</td>
+			<td>@user.Password</td>
+			<td>@user.dateOfBirth</td>
+			<td>@user.Role</td>
+			<td>@user.Email</td>
+		</tr>
+	}
+</table>

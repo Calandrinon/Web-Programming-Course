@@ -27,20 +27,10 @@ namespace EnterpriseUserManagementSystem_ActualProject.Controllers
         [HttpPost]
         public IActionResult Login(string username, string password)
         {
-            bool found = false;
-            Console.WriteLine("Given username: " + username + "; Given password: " + password);
-            foreach (var usersContextUser in _usersContext.Users)
-            {
-                Console.WriteLine("Some username: " + usersContextUser.Username + "; Some password: " + usersContextUser.Password);
-                if (username == usersContextUser.Username && password == usersContextUser.Password)
-                {
-                    Console.WriteLine("Found the user!");
-                    found = true;
-                    break;
-                }
-            }
+            List<User> foundUsers = _usersContext.Users.Where(someUser =>
+                someUser.Username.Equals(username) && someUser.Password.Equals(password)).ToList();
             
-            if (!found)
+            if (foundUsers.Count == 0)
             {
                 return View("Error"); 
             }

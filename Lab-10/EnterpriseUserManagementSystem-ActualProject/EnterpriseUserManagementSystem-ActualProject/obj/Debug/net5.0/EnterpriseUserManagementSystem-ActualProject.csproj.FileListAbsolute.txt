@@ -82,3 +82,4 @@
 /home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/obj/Debug/net5.0/Razor/Views/Role/Index.cshtml.g.cs
 /home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/obj/Debug/net5.0/Razor/Views/Update/Index.cshtml.g.cs
 /home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/obj/Debug/net5.0/Razor/Views/User/Index.cshtml.g.cs
+/home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/obj/Debug/net5.0/Razor/Views/Name/Index.cshtml.g.cs
