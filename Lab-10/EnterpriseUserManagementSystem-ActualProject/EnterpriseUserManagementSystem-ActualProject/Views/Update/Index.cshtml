@@ -3,17 +3,16 @@
 }
 
 <script>
-/**
-    $(document).ready(function(){
-		$("#registerButton").click(function() {
-			$.post("/Auth/Register", {username: $("#username").val(), password: $("#password").val()},
-				function(data,status) {
-					$("#maindiv").html(data);
-				});
-		});
-	});
-	**/
 </script>
 
 <h1>Update users</h1>
 
+<form action="/Update/UpdateUser" method="post">
+	Name : <input type="text" id="name" name="name" /> <br />
+	Username : <input type="text" id="username" name="username" /> <br />
+	Password : <input type="text" id="password" name="password" /> <br />
+	Date of birth: <input type="text" id="dateOfBirth" name="dateOfBirth" /> <br />
+	Role: <input type="text" id="role" name="role" /> <br />
+	E-mail: <input type="text" id="email" name="email" /> <br />
+	<input type="submit" value="Update user" />
+</form>
