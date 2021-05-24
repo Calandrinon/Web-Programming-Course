@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using EnterpriseUserManagementSystem_ActualProject.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace EnterpriseUserManagementSystem_ActualProject.Controllers
 {
@@ -20,6 +21,9 @@ namespace EnterpriseUserManagementSystem_ActualProject.Controllers
 
         public IActionResult Index()
         {
+            Console.WriteLine(HttpContext.Session.GetString("authenticated"));
+            if (HttpContext.Session.GetString("authenticated") == "0")
+                return Redirect("/Auth");
             return View();
         }
 

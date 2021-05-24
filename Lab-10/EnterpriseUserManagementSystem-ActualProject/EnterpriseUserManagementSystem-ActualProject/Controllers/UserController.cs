@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using EnterpriseUserManagementSystem_ActualProject.Data;
 using EnterpriseUserManagementSystem_ActualProject.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnterpriseUserManagementSystem_ActualProject.Controllers
@@ -19,11 +20,18 @@ namespace EnterpriseUserManagementSystem_ActualProject.Controllers
         // GET
         public IActionResult Index()
         {
+            Console.WriteLine(HttpContext.Session.GetString("authenticated"));
+            if (HttpContext.Session.GetString("authenticated") == "0")
+                return Redirect("/Auth");
             return View();
         }
         
         public IActionResult GetUsers()
         {
+            Console.WriteLine(HttpContext.Session.GetString("authenticated"));
+            if (HttpContext.Session.GetString("authenticated") == "0")
+                return Redirect("/Auth");
+            
             List<User> users = _usersContext.Users.ToList();
             ViewData["allUsers"] = users;
             return View("Index");
