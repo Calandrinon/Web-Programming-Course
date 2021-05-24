@@ -2,18 +2,9 @@
     ViewData["Title"] = "Remove users";
 }
 
-<script>
-/**
-    $(document).ready(function(){
-		$("#registerButton").click(function() {
-			$.post("/Auth/Register", {username: $("#username").val(), password: $("#password").val()},
-				function(data,status) {
-					$("#maindiv").html(data);
-				});
-		});
-	});
-	**/
-</script>
-
 <h1>Remove users</h1>
 
+<form action="/Remove/RemoveUser" method="post">
+	Username : <input type="text" id="username" name="username" /> <br />
+	<input type="submit" value="Remove user" />
+</form>
