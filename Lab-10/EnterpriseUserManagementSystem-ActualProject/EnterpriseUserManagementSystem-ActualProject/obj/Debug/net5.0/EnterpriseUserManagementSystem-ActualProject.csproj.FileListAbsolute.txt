@@ -76,3 +76,9 @@
 /home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
 /home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/bin/Debug/net5.0/Humanizer.dll
 /home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/obj/Debug/net5.0/Razor/Views/Auth/Index.cshtml.g.cs
+/home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/obj/Debug/net5.0/Razor/Views/Add/Index.cshtml.g.cs
+/home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/obj/Debug/net5.0/Razor/Views/Remove/Index.cshtml.g.cs
+/home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/obj/Debug/net5.0/Razor/Views/Role/Index.cshtml.g.cs
+/home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/obj/Debug/net5.0/Razor/Views/Update/Index.cshtml.g.cs
+/home/calandrinon/Documents/an2sem2/Web-Programming/Lab-10/EnterpriseUserManagementSystem-ActualProject/EnterpriseUserManagementSystem-ActualProject/obj/Debug/net5.0/Razor/Views/User/Index.cshtml.g.cs

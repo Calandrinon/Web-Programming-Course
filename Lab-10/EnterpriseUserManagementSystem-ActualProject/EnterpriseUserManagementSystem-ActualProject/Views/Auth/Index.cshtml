@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script>
+/**
+    $(document).ready(function(){
+		$("#registerButton").click(function() {
+			$.post("/Auth/Register", {username: $("#username").val(), password: $("#password").val()},
+				function(data,status) {
+					$("#maindiv").html(data);
+				});
+		});
+	});
+	**/
+</script>
+
+<div class="text-center">
+	<h1 class="display-4">Authentication page</h1>
+	 <form action="/Auth/Login" method="post">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+    
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>    
+    </form> 	
+</div>
