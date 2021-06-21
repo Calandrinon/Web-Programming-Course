@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise user management system</title>
+    <link rel="stylesheet" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="navbar">
+		<ul>
+			<li>
+				<a href="index.html" class="menu_link"><div class="wrap"><span class="text">Home</span></div></a>
+			</li>
+			<li>
+				<a href="roles.html" class="menu_link"><div class="wrap"><span class="text">Users and roles</span></div></a>
+			</li>
+			<li>
+				<a href="usersearch.html" class="menu_link"><div class="wrap"><span class="text">Search users by name</span></div></a>
+			</li>
+			<li>
+				<a href="add.html" class="menu_link"><div class="wrap"><span class="text">Add a user</span></div></a>
+			</li>
+			<li>
+				<a href="remove.html" class="menu_link"><div class="wrap"><span class="text">Remove a user</span></div></a>
+			</li>
+			<li>
+				<a href="update.html" class="menu_link"><div class="wrap"><span class="text">Update a user</span></div></a>
+			</li>
+		</ul>
+	</div>
+
+    <h1 id="welcome-message">Welcome to the enterprise user management system.</h1>
+	<div id="inputForm">
+		<h2>Update a user's password based on their username:</h2>
+		<div>
+			<form id="actualForm">
+			<input type="text" placeholder="Username" name="username" id="username"/> <br>
+			<input type="text" placeholder="Password" name="password" id="password"/> <br>
+			<br>
+			<input type="button" id="updateUser" value="Update"/>
+			</form>
+		</div>
+	</div>
+		
+	<div id="container">
+
+	</div>
+</body>
+</html>

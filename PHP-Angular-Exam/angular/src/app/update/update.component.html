@@ -1,0 +1,18 @@
+<h1 id="welcome-message">Welcome to the enterprise user management system.</h1>
+<div id="inputForm">
+    <h2>Update a user's password:</h2>
+    <div>
+        <form id="actualForm">
+            <input type="text" placeholder="Username" name="username" id="username" #username/> <br>
+            <input type="text" placeholder="Password" name="password" id="password" #password/> <br>
+            <br>
+            <input type="button" id="updateUser" value="Update" (click)="updateUser(username.value, password.value)"/>
+        </form>
+    </div>
+</div>
+
+<div id="container" *ngIf="updated == true">
+    <h1>User updated.</h1>
+</div>
+    
+

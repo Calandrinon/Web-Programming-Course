@@ -1,0 +1,21 @@
+<h1 id="welcome-message">Welcome to the enterprise user management system.</h1>
+<div id="inputForm">
+    <h2>Add a user:</h2>
+    <div>
+        <form id="actualForm">
+            <input type="text" placeholder="Name" name="name" id="name" #name/> <br>
+            <input type="text" placeholder="Username" name="username" id="username" #username/> <br>
+            <input type="text" placeholder="Password" name="password" id="password" #password/> <br>
+            <input type="text" placeholder="Date of birth" name="dateOfBirth" id="dateOfBirth" #dateOfBirth/> <br>
+            <input type="text" placeholder="Role" name="role" id="role" #role/> <br>
+            <input type="text" placeholder="E-mail" name="email" id="email" #email/> <br>
+            <br>
+            <input type="button" id="addUser" value="Add" (click)="addUser(name.value, username.value, password.value, dateOfBirth.value, role.value, email.value)"/>
+        </form>
+    </div>
+</div>
+
+<div id="container" *ngIf="added == true">
+    <h1>User added.</h1>
+</div>
+    

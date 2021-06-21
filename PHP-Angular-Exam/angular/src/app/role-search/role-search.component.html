@@ -1,0 +1,12 @@
+<h1 id="welcome-message">Welcome to the enterprise user management system.</h1>
+<div id="inputForm">
+    <h2>Get user by role:</h2>
+    <div>
+        <input type="text" name="role" placeholder="Role" id="role" #role/>
+        <input type="button" id="showUsersByRole" value="Get details" (click)="searchButtonClick(role.value)"/>
+    </div>
+    <p>Previous browsing action:</p><br>
+    <div id="filterHistory">{{newFilterHistoryTerm}}</div>
+</div>
+    
+<app-user-list></app-user-list>
