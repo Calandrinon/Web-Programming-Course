@@ -15,6 +15,8 @@ public class ExampleController extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        PrintWriter printWriter = new PrintWriter(response.getOutputStream());
+        printWriter.println("<h1>Hello from the ExampleController!</h1>");
+        printWriter.flush();
     }
 }

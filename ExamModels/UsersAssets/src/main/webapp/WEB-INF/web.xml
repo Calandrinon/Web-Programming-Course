@@ -23,4 +23,13 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AssetServlet</servlet-name>
+        <servlet-class>com.exam.controller.AssetController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AssetServlet</servlet-name>
+        <url-pattern>/assets</url-pattern>
+    </servlet-mapping>
 </web-app>

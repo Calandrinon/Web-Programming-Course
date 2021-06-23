@@ -1,5 +1,6 @@
 package com.exam.repository;
 
+import com.exam.model.Asset;
 import com.exam.model.User;
 
 import java.sql.*;
@@ -43,137 +44,49 @@ public class Repository {
         return Optional.ofNullable(user);
     }
 
-    /**
-    public ArrayList<Image> getUserImages(int userId) {
-        ArrayList<Image> images = new ArrayList<Image>();
+
+    public Optional<User> getUserWithName(String username) {
+        User user = null;
         ResultSet resultSet;
 
         try {
-            resultSet = statement.executeQuery("SELECT * FROM Images WHERE UserId = " + userId);
-            while (resultSet.next()) {
-                Image image = new Image(resultSet.getString(4), resultSet.getString(3));
-                image.setId(resultSet.getInt(1));
-                image.setUserId(resultSet.getInt(2));
-                image.setNumberOfVotes(resultSet.getInt(5));
-                images.add(image);
-            }
-            resultSet.close();
+            resultSet = statement.executeQuery("SELECT * FROM Users WHERE username = '" + username + "'");
+            if (resultSet.next())
+                user = new User(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return images;
+
+        return Optional.ofNullable(user);
     }
 
-    public ArrayList<Image> getAllImages() {
-        ArrayList<Image> images = new ArrayList<Image>();
-        ResultSet resultSet;
 
+    public ArrayList<Asset> getUserAssets(int userId) {
+        ArrayList<Asset> assets = new ArrayList<Asset>();
+        ResultSet rs;
         try {
-            resultSet = statement.executeQuery("SELECT * FROM Images");
-            while (resultSet.next()) {
-                Image image = new Image(resultSet.getString(4), resultSet.getString(3));
-                image.setId(resultSet.getInt(1));
-                image.setUserId(resultSet.getInt(2));
-                image.setNumberOfVotes(resultSet.getInt(5));
-                images.add(image);
+            rs = statement.executeQuery("select * from Assets where UserId="+userId);
+            while (rs.next()) {
+                Asset asset = new Asset(rs.getInt(2), rs.getString(3), rs.getString(4), rs.getInt(5));
+                asset.setId(rs.getInt(1));
+                assets.add(asset);
             }
-            resultSet.close();
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return images;
+        return assets;
     }
 
-    public boolean updateImage(Image image) {
+    public boolean updateAsset(Asset asset) {
         int r = 0;
         try {
-            r = statement.executeUpdate("UPDATE Images SET NumberOfVotes=" + image.getNumberOfVotes() + " WHERE ImageId=" + image.getId());
+            r = statement.executeUpdate("update assets set description='"+asset.getDescription()+"', value="+asset.getValue() +
+                    " where id="+asset.getId());
         } catch (SQLException e) {
             e.printStackTrace();
         }
         if (r>0) return true;
         else return false;
     }
-
-
-    public boolean modifyVote(Image image, Integer userId, Integer point) {
-        ResultSet resultSet;
-
-        try {
-            resultSet = statement.executeQuery("SELECT * FROM Images_Users WHERE UserId = " + userId + " AND ImageId=" + image.getId());
-
-            System.out.println("IN THE REPOSITORY:");
-            if (resultSet.next()) {
-                System.out.println("Looks like the user has already rated this image.");
-                return false;
-            } else {
-                System.out.println("The user hasn't yet rated this image.");
-                String sqlStatement = "UPDATE Images SET NumberOfVotes = NumberOfVotes + (" + point + ")" + " WHERE ImageId = " + image.getId();
-                statement.executeUpdate(sqlStatement);
-                sqlStatement = "INSERT INTO Images_Users (ImageId, UserId) VALUES (" + image.getId() + "," + userId + ")";
-                statement.executeUpdate(sqlStatement);
-            }
-
-            resultSet.close();
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return false;
-    }
-
-
-    public Optional<Image> saveImage(Image image) {
-        ResultSet resultSet;
-
-        try {
-            String sqlStatement = "INSERT INTO Images (UserId, Description, Filename, NumberOfVotes) VALUES (" + image.getUserId() + ", '" + image.getDescription() + "','" + image.getFilename() + "'," + image.getNumberOfVotes() + ")";
-            System.out.println("<REPOSITORY> The inserted image: " + sqlStatement);
-            statement.executeUpdate(sqlStatement);
-            return Optional.of(image);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return Optional.empty();
-        }
-    }
-
-    public Integer getUserId(String username) {
-        ResultSet resultSet;
-        Integer userId = null;
-
-        try {
-            resultSet = statement.executeQuery("SELECT ID FROM Users WHERE Username = '" + username + "'");
-
-            while (resultSet.next()) {
-                userId = resultSet.getInt(1);
-            }
-
-            resultSet.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return userId;
-    }
-
-    public ArrayList<Image> getTheTopNImages(Integer topN) {
-        ArrayList<Image> images = new ArrayList<Image>();
-        ResultSet resultSet;
-
-        try {
-            resultSet = statement.executeQuery("SELECT * FROM Images ORDER BY NumberOfVotes DESC LIMIT " + topN);
-            while (resultSet.next()) {
-                Image image = new Image(resultSet.getString(4), resultSet.getString(3));
-                image.setId(resultSet.getInt(1));
-                image.setUserId(resultSet.getInt(2));
-                image.setNumberOfVotes(resultSet.getInt(5));
-                images.add(image);
-            }
-            resultSet.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return images;
-    }
-     **/
 }
