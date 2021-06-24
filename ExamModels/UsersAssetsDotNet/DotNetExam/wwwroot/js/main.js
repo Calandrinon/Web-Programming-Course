@@ -1,7 +1,7 @@
 var assets = [];
 
 function getAssets() {
-    $.get("/Assets", function(response) {
+    $.get("Assets/GetAssets", function(response) {
         console.log(response);
         assets = response;
         let container = document.getElementById("assetsList");
@@ -46,7 +46,7 @@ window.onload = function() {
         let name = document.getElementById("nameInput").value;
         let description = document.getElementById("descriptionInput").value;
         let value = document.getElementById("valueInput").value;
-        $.post("/GetAssets", {name: name, description: description, value: value}, function(response) {
+        $.post("Assets/AddAsset", {name: name, description: description, value: value}, function(response) {
             console.log("Response after adding asset: ");
             console.log(response);
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DotNetExam.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace DotNetExam.Controllers
 {
@@ -20,6 +21,9 @@ namespace DotNetExam.Controllers
 
         public IActionResult Index()
         {
+            Console.WriteLine(HttpContext.Session.GetString("authenticated"));
+            if (HttpContext.Session.GetString("authenticated") == "0")
+                return Redirect("/Authentication");
             return View();
         }
 
